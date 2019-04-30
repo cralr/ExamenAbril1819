@@ -70,9 +70,19 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado>{
     return true;
   }
   
-  
   @Override
   public int compareTo(Cuadrado c) {
-    return (this.getLado() - c.getLado());
-  } 
+    int resultado = 0;
+
+    if (this.getLado() < c.getLado()) {
+      resultado = -1;
+    }
+    else if (this.getLado() > c.getLado()) {
+      resultado = 1;
+    }
+    else {
+      resultado = 0;
+      }
+    return resultado;
+  }
 }
