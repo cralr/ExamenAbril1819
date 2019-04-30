@@ -14,34 +14,7 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado>{
     setAncho(getLado());
     setAlto(getLado());
   }
-  
-  @Override
-  public String toString() {
-
-    int i, espacios;
-    String resultado = "";
-
-    for (i = 0; i < this.getLado(); i++) {
-      resultado += "[]";
-    }
-    resultado += "\n";
-    
-    for (i = 1; i < this.getLado() - 1; i++) {
-      resultado += "[]";
-      for (espacios = 1; espacios < this.getLado() -1; espacios++) {
-        resultado += "  ";
-      }
-      resultado += "[]\n";
-    }
-
-    for (i = 0; i < this.getLado(); i++) {
-      resultado += "[]";
-    }
-    resultado += "\n";
-
-    return resultado;
-  }
-
+ 
   /* (non-Javadoc)
    * @see java.lang.Object#hashCode()
    */
