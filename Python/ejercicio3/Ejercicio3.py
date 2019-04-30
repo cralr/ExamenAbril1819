@@ -105,15 +105,7 @@ class Cuadrado(Rectangulo):
     
     def __eq__(self,other):
         return self.lado == other.lado
-    
-    @staticmethod
-    def __verifica_lado(num):
-        if not isinstance(num, int):  # lado no entero
-            raise TypeError("Lado no entero", num)
-        if (num <= 0 or num > 10):
-            raise ArithmeticError() 
-        
-    
+ 
 if __name__=="__main__":
     ancho=int(input("Introduce el ancho del rectángulo."))
     alto=int(input("Introduce el alto del rectángulo."))
