@@ -15,8 +15,8 @@ public class TestCuadrado {
   public static void main(String[] args) throws NoEsEnteroException {
     
     try {
-      Cuadrado cuadrado1 = new Cuadrado(3);
-      Cuadrado cuadrado2 = new Cuadrado(4);
+      Cuadrado cuadrado1 = new Cuadrado(4);
+      Cuadrado cuadrado2 = new Cuadrado(3);
       System.out.println("Cuadrado1");
       System.out.println(cuadrado1);
 

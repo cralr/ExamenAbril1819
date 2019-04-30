@@ -19,12 +19,8 @@ from builtins import isinstance
 class Rectangulo:
     
     def __init__(self,ancho,alto):
-        #Comprobación de errores
-        Rectangulo.__verifica_alto(alto)
-        Rectangulo.__verifica_ancho(ancho)
-        
-        self.__ancho=ancho
-        self.__alto=alto
+        self.ancho=ancho
+        self.alto=alto
         
     @property
     def ancho(self):
@@ -82,15 +78,13 @@ class Rectangulo:
 class Cuadrado(Rectangulo):
     def __init__(self,lado,):
         super().__init__(lado,lado)
-        self.__lado=lado
         
     @property
     def lado(self):
-        return self.__lado
+        return self.ancho
 
     @lado.setter
     def lado(self, lado):
-        self.__lado = lado
         self.alto = lado
         self.ancho = lado  
 
@@ -99,8 +93,11 @@ class Cuadrado(Rectangulo):
     def __gt__(self, other):
         return self.lado > other.lado
     
-    def __lt__(self,other):
-        return self.lado < other.lado
+    #def __lt__(self,other):
+    #    return self.lado < other.lado
+    
+    def __ge__(self, other):
+        return self.lado >= other.lado
     
     def __eq__(self,other):
         return self.lado == other.lado
@@ -113,15 +110,15 @@ if __name__=="__main__":
     print(rectangulo1)
     
     print("Cuadrados generados: ")
-    cuadrado1 = Cuadrado(3)
-    cuadrado2 = Cuadrado(4)
+    cuadrado1 = Cuadrado(4)
+    cuadrado2 = Cuadrado(5)
     print(cuadrado1)
     print(cuadrado2)
     print("Cuadrado2 es mayor que cuadrado1: "+str(cuadrado2>cuadrado1))
     print("Cuadrado1 es mayor que cuadrado2: "+str(cuadrado1>cuadrado2))
     
-    print("Cuadrado2 es menor que cuadrado1: "+str(cuadrado2<cuadrado1))
-    print("Cuadrado1 es menor que cuadrado2: "+str(cuadrado1<cuadrado2))
+    print("Cuadrado1 es mayor o igual que cuadrado2: "+str(cuadrado2<=cuadrado1))
+    print("Cuadrado2 es mayor o igual que cuadrado1: "+str(cuadrado1<=cuadrado2))
     
     print("Cuadrado2 es igual que cuadrado1: "+str(cuadrado2==cuadrado1))
     print("Cuadrado1 es igual que cuadrado2: "+str(cuadrado1==cuadrado2))

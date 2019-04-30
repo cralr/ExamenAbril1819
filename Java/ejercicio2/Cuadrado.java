@@ -72,7 +72,9 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado>{
   
   @Override
   public int compareTo(Cuadrado c) {
-    int resultado = 0;
+    return this.getAlto()-c.getLado();
+  }
+   /* int resultado = 0;
 
     if (this.getLado() < c.getLado()) {
       resultado = -1;
@@ -84,5 +86,5 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado>{
       resultado = 0;
       }
     return resultado;
-  }
+  }*/
 }
