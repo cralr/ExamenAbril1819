@@ -153,8 +153,7 @@ public class TestGestisimal {
       Articulo articulo = almacen.get(codigo);
       System.out.println(articulo);
 
-      int cantidad = Teclado.leerEntero("Introduzca el número de artículos a aumentar del stock del almacen.");
-      almacen.incrementar(codigo, cantidad);
+      almacen.incrementar(codigo, Teclado.leerEntero("Introduzca el número de artículos a aumentar del stock del almacen."));
     } catch (ArticuloNoExisteException | CantidadNegativaException e) {
       System.err.println("No se ha podido incrementar el stock del artículo." + e.getMessage()+"\n");
     }
@@ -173,8 +172,7 @@ public class TestGestisimal {
       Articulo articulo = almacen.get(codigo);
       System.out.println(articulo);
 
-      int cantidad = Teclado.leerEntero("Introduzca el número de artículos a eliminar del stock del almacen.");
-      almacen.decrementar(codigo, cantidad);
+      almacen.decrementar(codigo, Teclado.leerEntero("Introduzca el número de artículos a eliminar del stock del almacen."));
     } catch (ArticuloNoExisteException |StockNegativoException | CantidadNegativaException e ) {
       System.err.println("No se ha podido decrementar el stock del artículo." + e.getMessage()+"\n");
     }
