@@ -17,9 +17,9 @@ import ejercicio1.almacen.exceptions.NoEsEnteroException;
  * @version 1.0
  */
 public class Menu {
-  String titulo = null;
-  String opciones[] = null;
-  int numOpciones = 0;
+  private String titulo = null;
+  private String opciones[] = null;
+  private int numOpciones = 0;
 
   /**
    * 
