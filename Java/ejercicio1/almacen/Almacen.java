@@ -26,11 +26,6 @@ public class Almacen {
    */
   public void annadir(String descripcion,Iva iva, double precioCompra, double precioVenta, int stock) throws Exception {
     Articulo articulo = new Articulo(descripcion,iva, precioCompra, precioVenta, stock);
-    if (!(arraylist.contains(articulo)))
-      arraylist.add(articulo);
-    else
-      throw new ArticuloYaExisteException("El árticulo ya existe.");
-
   }
 
   /**
