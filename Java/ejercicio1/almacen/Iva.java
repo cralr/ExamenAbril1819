@@ -8,9 +8,9 @@ package ejercicio1.almacen;
  * @version 1.0
  */
 public enum Iva {
-  General,
-  Reducido,
-  SuperReducido;
+  GENERAL,
+  REDUCIDO,
+  SUPERREDUCIDO;
   
   public static String[] toArray() {
     String[] iva = new String[Iva.values().length];
