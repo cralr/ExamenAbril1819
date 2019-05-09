@@ -99,9 +99,10 @@ public class Almacen {
    * @param cantidad
    * @throws CantidadNegativaException
    * @throws StockNegativoException
+   * @throws ArticuloNoExisteException 
    */
-  public void incrementar(int codigo, int cantidad) throws StockNegativoException, CantidadNegativaException {
-    Articulo articulo = arraylist.get(arraylist.indexOf(new Articulo(codigo))); 
+  public void incrementar(int codigo, int cantidad) throws StockNegativoException, CantidadNegativaException, ArticuloNoExisteException {
+    Articulo articulo = get(codigo); 
     articulo.incrementaStock(cantidad);
   }
 
@@ -112,9 +113,10 @@ public class Almacen {
    * @param cantidad
    * @throws CantidadNegativaException
    * @throws StockNegativoException
+   * @throws ArticuloNoExisteException 
    */
-  public void decrementar(int codigo, int cantidad) throws StockNegativoException, CantidadNegativaException {
-    Articulo articulo = arraylist.get(arraylist.indexOf(new Articulo(codigo)));
+  public void decrementar(int codigo, int cantidad) throws StockNegativoException, CantidadNegativaException, ArticuloNoExisteException {
+    Articulo articulo = get(codigo);
     articulo.decrementaStock(cantidad);
     
   }
