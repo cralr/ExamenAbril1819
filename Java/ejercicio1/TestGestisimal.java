@@ -35,8 +35,6 @@ public class TestGestisimal {
   
   public static void main(String[] args) throws Exception {
 
-    int opcion;
-
     do {
       switch ((menu.gestionar())) {
         case 1:
