@@ -71,15 +71,12 @@ public class TestGestisimal {
 
     try {
       System.out.println("--AÑADIR ARTÍCULO--");
-      String descripcion=Teclado.leerCadena("Introduzca la descripción del artículo:");
-      System.out.println("Elige el tipo de Iva:");
-      Iva iva=pedirIva();
-      double precioCompra=Teclado.leerDecimal("Introduzca el precio de compra del artículo:");
-      double precioVenta=Teclado.leerDecimal("Introduzca el precio de venta del artículo:");
-      int stock=Teclado.leerEntero("Introduzca el stock del artículo:");
-
-      almacen.annadir(descripcion,iva, precioCompra, precioVenta, stock); // Con almacen.annadir usamos el metodo creado en
-                                                                      // Almacen.
+      almacen.annadir(Teclado.leerCadena("Introduzca la descripción del artículo:"),
+          pedirIva(), 
+          Teclado.leerDecimal("Introduzca el precio de compra del artículo:"),
+          Teclado.leerDecimal("Introduzca el precio de venta del artículo:"), 
+          Teclado.leerEntero("Introduzca el stock del artículo:")); 
+                                                                      
       System.out.println("Artículo añadido.");
     } catch (Exception e) {
       System.err.println("No se ha podido dar de alta al artículo. " + e.getMessage());// Si hay un error salta la
