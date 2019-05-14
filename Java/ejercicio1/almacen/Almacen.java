@@ -25,7 +25,7 @@ public class Almacen {
    * @throws Exception
    */
   public void annadir(String descripcion,Iva iva, double precioCompra, double precioVenta, int stock) throws Exception {
-    Articulo articulo = new Articulo(descripcion,iva, precioCompra, precioVenta, stock);
+    arraylist.add(new Articulo(descripcion,iva, precioCompra, precioVenta, stock));
   }
 
   /**
@@ -97,8 +97,7 @@ public class Almacen {
    * @throws ArticuloNoExisteException 
    */
   public void incrementar(int codigo, int cantidad) throws StockNegativoException, CantidadNegativaException, ArticuloNoExisteException {
-    Articulo articulo = get(codigo); 
-    articulo.incrementaStock(cantidad);
+    get(codigo).incrementaStock(cantidad);
   }
 
   /**
@@ -111,8 +110,7 @@ public class Almacen {
    * @throws ArticuloNoExisteException 
    */
   public void decrementar(int codigo, int cantidad) throws StockNegativoException, CantidadNegativaException, ArticuloNoExisteException {
-    Articulo articulo = get(codigo);
-    articulo.decrementaStock(cantidad);
+   get(codigo).decrementaStock(cantidad);
     
   }
 }
