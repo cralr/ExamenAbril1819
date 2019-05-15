@@ -138,10 +138,10 @@ public class Articulo {
    * @throws PrecioCompraNegativoException
    */
   void setPrecioCompra(double precioCompra) throws PrecioCompraNegativoException {
-    if (precioCompra >= 0) {
-      this.precioCompra = precioCompra;
-    } else
-        throw new PrecioCompraNegativoException("El precio de compra no puede ser negativo.");
+    if (precioCompra <= 0) 
+      throw new PrecioCompraNegativoException("El precio de compra no puede ser negativo.");
+      
+    this.precioCompra = precioCompra;
   }
 
   /**
@@ -162,11 +162,10 @@ public class Articulo {
    * @throws PrecioVentaNegativoException
    */
   void setPrecioVenta(double precioVenta) throws PrecioVentaNegativoException {
-    if (precioVenta >= 0) {
-      this.precioVenta = precioVenta;
-    } else
-        throw new PrecioVentaNegativoException("El precio de venta no puede ser negativo.");
+    if (precioVenta <= 0) 
+      throw new PrecioVentaNegativoException("El precio de venta no puede ser negativo.");
 
+    this.precioVenta = precioVenta;
   }
 
   /**
@@ -186,10 +185,10 @@ public class Articulo {
    * @throws StockNegativoException
    */
   void setStock(int stock) throws StockNegativoException {
-    if (stock >= 0) {
-      this.stock = stock;
-    } else
-        throw new StockNegativoException("El stock no puede ser negativo.");
+    if (stock <= 0) 
+      throw new StockNegativoException("El stock no puede ser negativo.");
+
+    this.stock = stock;
   }
   
   /**
@@ -209,7 +208,7 @@ public class Articulo {
   void setIva(Iva iva) throws IvaInvalidoException {
     if (iva == null)
       throw new IvaInvalidoException("Iva no valido");
-      this.iva = iva;
+    this.iva = iva;
   }
 
   /**
@@ -220,10 +219,10 @@ public class Articulo {
    * @throws CantidadNegativaException
    */
   public void incrementaStock(int cantidad) throws StockNegativoException, CantidadNegativaException {
-    if (cantidad > 0)
-      setStock(getStock() + cantidad);
-    else
+    if (cantidad < 0)
       throw new CantidadNegativaException("No se puede añadir una cantidad de stock negativo.");
+
+    setStock(getStock() + cantidad);
   }
 
   /**
@@ -234,10 +233,10 @@ public class Articulo {
    * @throws StockNegativoException
    */
   public void decrementaStock(int cantidad) throws CantidadNegativaException, StockNegativoException {
-    if (cantidad > 0)
-      setStock(getStock() - cantidad);
-    else
+    if (cantidad < 0)
       throw new CantidadNegativaException("No se puede añadir una cantidad de stock negativo.");
+
+    setStock(getStock() - cantidad);
   }
 
   /*
