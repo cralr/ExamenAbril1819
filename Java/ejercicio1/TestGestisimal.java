@@ -93,8 +93,7 @@ public class TestGestisimal {
    */
   private static void baja() throws CodigoNoValidoException, NoEsEnteroException {
     try {
-      int codigo= Teclado.leerEntero("Introduce el códido del artículo a eliminar.");
-      if (almacen.baja(codigo))
+      if (almacen.baja(Teclado.leerEntero("Introduce el código del artículo a eliminar.")))
         System.out.println("Artículo eliminado.");
       else
         System.err.println("El artículo no se ha podido eliminar. No existe un artículo con ese código en el almacen.");
@@ -120,7 +119,7 @@ public class TestGestisimal {
 
     try {
       System.out.println("--MODIFICAR ARTÍCULO--");
-      int codigo= Teclado.leerEntero("Introduce el códido del artículo a modificar.");
+      int codigo= Teclado.leerEntero("Introduce el código del artículo a modificar.");
       Articulo articulo = almacen.get(codigo);
       System.out.println(articulo);
 
