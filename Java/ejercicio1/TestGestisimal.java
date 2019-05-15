@@ -26,8 +26,7 @@ public class TestGestisimal {
   static Iva iva[] =Iva.values();
   
   static Almacen almacen = new Almacen();
-  static Scanner entrada = new Scanner(System.in);
-  private static Menu menu = new Menu("----MENÚ GESTISIMAL----", new String[] {"Listado", "Alta", "Baja",
+  private static Menu menu = new Menu("---MENÚ GESTISIMAL----", new String[] {"Listado", "Alta", "Baja",
       "Modificación", "Entada de mercancía","Salida de mercancía", "Salir" });
   
   //Creación del objeto menuIva, será una instacia de menu.
@@ -36,6 +35,7 @@ public class TestGestisimal {
   public static void main(String[] args) throws Exception {
 
     do {
+      System.out.println("\n");
       switch ((menu.gestionar())) {
         case 1:
           System.out.println(almacen);
@@ -80,7 +80,6 @@ public class TestGestisimal {
       System.out.println("Artículo añadido.");
     } catch (Exception e) {
       System.err.println("No se ha podido dar de alta al artículo. " + e.getMessage());// Si hay un error salta la
-      entrada.nextLine();
     }
   }
 
@@ -129,7 +128,6 @@ public class TestGestisimal {
           Teclado.leerEntero("Introduzca el stock del artículo:"));
     } catch (ArticuloNoExisteException  | PrecioCompraNegativoException | PrecioVentaNegativoException | StockNegativoException | NoEsDecimalException | NoEsEnteroException e  ) {
       System.err.println("No se ha podido modificar el artículo." + e.getMessage());
-      entrada.nextLine();
     }
 
   }
