@@ -15,13 +15,18 @@ public class TestCuadrado {
   public static void main(String[] args) throws NoEsEnteroException {
     
     try {
-      Cuadrado cuadrado1 = new Cuadrado(4);
+      Cuadrado cuadrado1 = new Cuadrado(2);
       Cuadrado cuadrado2 = new Cuadrado(3);
       System.out.println("Cuadrado1");
       System.out.println(cuadrado1);
 
       System.out.println("Cuadrado2");
       System.out.println(cuadrado2);
+      
+      System.out.println("Cuadrado 1 cambio de lado: ");
+      cuadrado1.setLado(10);
+      
+      System.out.println(cuadrado1);
 
       if (cuadrado1.compareTo(cuadrado2) == 0) {
         System.out.println("Son iguales.");

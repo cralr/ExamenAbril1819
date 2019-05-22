@@ -10,9 +10,9 @@ public class Cuadrado extends Rectangulo implements Comparable<Cuadrado>{
     return this.getAlto(); 
   }
   
-  public void setLado() {
-    setAncho(getLado());
-    setAlto(getLado());
+  public void setLado(int l) {
+    this.setAlto(l);
+    this.setAncho(l);
   }
  
   /* (non-Javadoc)
