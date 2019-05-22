@@ -35,7 +35,6 @@ public class TestGestisimal {
   public static void main(String[] args) throws Exception {
 
     do {
-      System.out.println("\n");
       switch ((menu.gestionar())) {
         case 1:
           System.out.println(almacen);
@@ -119,8 +118,7 @@ public class TestGestisimal {
     try {
       System.out.println("--MODIFICAR ARTÍCULO--");
       int codigo= Teclado.leerEntero("Introduce el código del artículo a modificar.");
-      Articulo articulo = almacen.get(codigo);
-      System.out.println(articulo);
+      System.out.println(almacen.get(codigo));
 
       almacen.set(codigo, pedirIva(), Teclado.leerCadena("Introduzca la descripción del artículo:"),
           Teclado.leerDecimal("Introduzca el precio de compra del artículo:"),
@@ -142,8 +140,7 @@ public class TestGestisimal {
     try {
       System.out.println("--INCREMENTAR STOCK--");
       int codigo= Teclado.leerEntero("Introduce el códido del artículo a eliminar.");
-      Articulo articulo = almacen.get(codigo);
-      System.out.println(articulo);
+      System.out.println(almacen.get(codigo));
 
       almacen.incrementar(codigo, Teclado.leerEntero("Introduzca el número de artículos a aumentar del stock del almacen."));
     } catch (ArticuloNoExisteException | CantidadNegativaException e) {
@@ -161,8 +158,7 @@ public class TestGestisimal {
     try {
       System.out.println("--DECREMENTAR STOCK--");
       int codigo= Teclado.leerEntero("Introduce el códido del artículo a eliminar.");
-      Articulo articulo = almacen.get(codigo);
-      System.out.println(articulo);
+      System.out.println(almacen.get(codigo));
 
       almacen.decrementar(codigo, Teclado.leerEntero("Introduzca el número de artículos a eliminar del stock del almacen."));
     } catch (ArticuloNoExisteException |StockNegativoException | CantidadNegativaException e ) {
